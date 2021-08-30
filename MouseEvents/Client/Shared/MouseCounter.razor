@@ -1,0 +1,14 @@
+﻿<div class="mouse-counter"
+    @onpointerover="()=>pointerOver++" @onpointerover:stopPropagation
+    @onpointerout="()=>pointerOut++" @onpointerout:stopPropagation
+    >
+    Over: @pointerOver / Out: @pointerOut
+</div>
+
+@code {
+    // https://github.com/dotnet/aspnetcore/issues/13104
+    // https://github.com/dotnet/aspnetcore/issues/17552
+    // !!! https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event
+    private int pointerOver;
+    private int pointerOut;
+}

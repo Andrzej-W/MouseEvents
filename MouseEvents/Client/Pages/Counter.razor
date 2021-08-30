@@ -1,0 +1,20 @@
+﻿@page "/counter"
+
+<h1>Mouse events counter</h1>
+<div>
+    Over: @pointerOver / Out: @pointerOut
+</div>
+
+<div class="grid"
+     @onpointerover="()=>pointerOver++"
+     @onpointerout="()=>pointerOut++">
+    @for (int i = 0; i < 20; i++)
+    {
+        <MouseCounter></MouseCounter>
+    }
+</div>
+
+@code {
+    private int pointerOver;
+    private int pointerOut;
+}
