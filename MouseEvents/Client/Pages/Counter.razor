@@ -1,20 +1,36 @@
 ﻿@page "/counter"
+@using System.Diagnostics
 
 <h1>Mouse events counter</h1>
 <div>
-    Over: @pointerOver / Out: @pointerOut
+    Over: @pointerOver / Out: @pointerOut / Render: @render / Time: @sw.Elapsed
 </div>
 
 <div class="grid"
-     @onpointerover="()=>pointerOver++"
-     @onpointerout="()=>pointerOut++">
-    @for (int i = 0; i < 20; i++)
+     @onpointerover="()=>{pointerOver++;sw.Restart();}"
+     @onpointerout="()=>{pointerOut++;sw.Restart();}">
+    @for (int i = 0; i < 2000; i++)
     {
-        <MouseCounter></MouseCounter>
+        Param x = new();
+        x.i = i;
+        <MouseCounter @key="@i" CounterId="@i"></MouseCounter>
     }
 </div>
 
 @code {
     private int pointerOver;
     private int pointerOut;
+    private int render;
+    Stopwatch sw = new();
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        render++;
+        sw.Stop();
+    }
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        sw.Restart();
+    }
 }

@@ -2,7 +2,9 @@
     @onpointerover="()=>pointerOver++" @onpointerover:stopPropagation
     @onpointerout="()=>pointerOut++" @onpointerout:stopPropagation
     >
-    Over: @pointerOver / Out: @pointerOut
+    <div><strong>Id: @CounterId</strong></div>
+    Over: @pointerOver / Out: @pointerOut<br />
+    Render: @render
 </div>
 
 @code {
@@ -11,4 +13,12 @@
     // !!! https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event
     private int pointerOver;
     private int pointerOut;
+    private int render;
+    [Parameter]
+    public int CounterId { get; set; }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        render++;
+    }
 }

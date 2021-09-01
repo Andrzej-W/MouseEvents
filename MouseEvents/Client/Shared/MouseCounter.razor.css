@@ -1,5 +1,5 @@
 ﻿.mouse-counter {
-    display: inline-block;
     padding: 5px;
-    border: 1px dotted 
+    border: 1px dotted ;
+    background-color: aqua;
 }

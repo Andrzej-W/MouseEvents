@@ -61,8 +61,8 @@ a, .btn-link {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5 100px);
-    column-gap: 10px;
-    row-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    /*grid-auto-rows: auto;*/
+    gap: 20px;
     background-color: yellow;
 }
