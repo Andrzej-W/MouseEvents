@@ -3,19 +3,22 @@
 
 <h1>Mouse events counter</h1>
 <div>
-    Over: @pointerOver / Out: @pointerOut / Render: @render / Time: @sw.Elapsed
+    Over: @pointerOver / Out: @pointerOut / Render: @render
 </div>
 
 <div class="grid"
      @onpointerover="()=>{pointerOver++;sw.Restart();}"
      @onpointerout="()=>{pointerOut++;sw.Restart();}">
+    <StopwatchStop Name="Top" Stopwatch="@sw"></StopwatchStop>
     @for (int i = 0; i < 2000; i++)
     {
         Param x = new();
         x.i = i;
-        <MouseCounter @key="@i" CounterId="@i"></MouseCounter>
+        <MouseCounter @key="@i" CounterId="@x"></MouseCounter>
     }
+    <StopwatchStop Name="Bottom" Stopwatch="@sw"></StopwatchStop>
 </div>
+<StopwatchStop Name="EndOfPage" Stopwatch="@sw"></StopwatchStop>
 
 @code {
     private int pointerOver;
@@ -26,7 +29,7 @@
     {
         base.OnAfterRender(firstRender);
         render++;
-        sw.Stop();
+        Console.WriteLine($"Top Level - {sw.Elapsed}");
     }
     protected override void OnParametersSet()
     {

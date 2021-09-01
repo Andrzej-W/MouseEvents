@@ -1,0 +1,13 @@
+﻿@using System.Diagnostics
+@code {
+    [Parameter]
+    public string? Name { get; set; }
+    [Parameter]
+    public Stopwatch? Stopwatch { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        Console.WriteLine($"{Name} - {Stopwatch?.Elapsed}");
+    }
+}

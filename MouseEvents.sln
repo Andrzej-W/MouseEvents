@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseEvents.Client", "MouseEvents\Client\MouseEvents.Client.csproj", "{B77CC027-EAF3-47B9-8D27-56B24AF8634B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseEvents.Client", "MouseEvents\Client\MouseEvents.Client.csproj", "{B77CC027-EAF3-47B9-8D27-56B24AF8634B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseEvents.Server", "MouseEvents\Server\MouseEvents.Server.csproj", "{3DEEEAD9-9D29-4490-8821-AACCB6C4224F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseEvents.Server", "MouseEvents\Server\MouseEvents.Server.csproj", "{3DEEEAD9-9D29-4490-8821-AACCB6C4224F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseEvents.Shared", "MouseEvents\Shared\MouseEvents.Shared.csproj", "{9ACE1F1E-AFF2-4869-A537-6EC8BC764EA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseEvents.Shared", "MouseEvents\Shared\MouseEvents.Shared.csproj", "{9ACE1F1E-AFF2-4869-A537-6EC8BC764EA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

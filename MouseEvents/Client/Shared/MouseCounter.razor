@@ -2,7 +2,7 @@
     @onpointerover="()=>pointerOver++" @onpointerover:stopPropagation
     @onpointerout="()=>pointerOut++" @onpointerout:stopPropagation
     >
-    <div><strong>Id: @CounterId</strong></div>
+    <div><strong>Id: @CounterId?.i</strong></div>
     Over: @pointerOver / Out: @pointerOut<br />
     Render: @render
 </div>
@@ -15,7 +15,7 @@
     private int pointerOut;
     private int render;
     [Parameter]
-    public int CounterId { get; set; }
+    public Param? CounterId { get; set; }
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
