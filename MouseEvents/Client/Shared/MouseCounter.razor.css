@@ -3,3 +3,10 @@
     border: 1px dotted ;
     background-color: aqua;
 }
+
+.narrow {
+    width: 75%;
+    height: 50%;
+    z-index: 1;
+    overflow: hidden;
+}

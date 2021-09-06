@@ -1,4 +1,4 @@
-﻿<div class="mouse-counter"
+﻿<div class="mouse-counter @(CounterId?.i == 0 ? "narrow" : string.Empty)"
     @onpointerover="()=>pointerOver++" @onpointerover:stopPropagation
     @onpointerout="()=>pointerOut++" @onpointerout:stopPropagation
     >
